@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 
 public class DBUtil {
-	private static final String PERSISTENCE_UNIT_NAME ="recording_my_foods";
+	private static final String PERSISTENCE_UNIT_NAME ="recording_myfoods";
 	private static EntityManagerFactory emf ;
 
 	public static EntityManager createEntityManager(){
