@@ -22,7 +22,7 @@ public class RecordsShowServlet extends HttpServlet {
 		super();
 	}
 
-	protected void doget(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException {
 		EntityManager em = DBUtil.createEntityManager();
 
 		Record e =em.find(Record.class, Integer.parseInt(request.getParameter("id")));

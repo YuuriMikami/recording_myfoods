@@ -14,7 +14,7 @@
     			<h1>食事管理記録</h1>
     		</div>
     		<div id="content">
-    			${param.comtent}
+    			${param.content}
     		</div>
     		<div id="footer">
     			by Y.M.
