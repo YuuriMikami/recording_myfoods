@@ -11,14 +11,28 @@
     <body>
     	<div id="wrapper">
     		<div id="header">
-    			<h1>食事管理記録</h1>
-    		</div>
-    		<div id="content">
-    			${param.content}
-    		</div>
-    		<div id="footer">
-    			by Y.M.
-    		</div>
-    	</div>
+    			<div id="header_menu">
+    				<h1><a href="<c:url value='/' />">食事管理記録</a></h1>&nbsp;&nbsp;&nbsp;
+    		 <c:if test="${sessionScope.login_record != null}">
+                        <c:if test="${sessionScope.login_record.admin_flag == 1}">
+                            <a href="<c:url value='/records/index' />">管理</a>&nbsp;
+                        </c:if>
+                        <a href="<c:url value='/reports/index' />">MEMO</a>&nbsp;
+                    </c:if>
+                </div>
+                <c:if test="${sessionScope.login_record != null}">
+                    <div id="record_name">
+                        <c:out value="${sessionScope.login_record.name}" />&nbsp;さん&nbsp;&nbsp;&nbsp;
+                        <a href="<c:url value='/logout' />">ログアウト</a>
+                    </div>
+                </c:if>
+            </div>
+            <div id="content">
+                ${param.content}
+            </div>
+            <div id="footer">
+                by Y.M.
+            </div>
+        </div>
     </body>
 </html>
