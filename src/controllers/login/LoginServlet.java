@@ -22,16 +22,12 @@ import utils.EncryptUtil;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public LoginServlet() {
         super();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+
     //ログイン画面表示
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("_token", request.getSession().getId());
@@ -45,9 +41,7 @@ public class LoginServlet extends HttpServlet {
         rd.forward(request, response);
     }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	//ログイン処理実行
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//認証結果を格納する変数
@@ -91,7 +85,7 @@ public class LoginServlet extends HttpServlet {
             rd.forward(request, response);
         } else {
             // 認証できたらログイン状態にしてトップページへリダイレクト
-            request.getSession().setAttribute("login_employee", e);
+            request.getSession().setAttribute("login_record", e);
 
             request.getSession().setAttribute("flush", "ログインしました。");
             response.sendRedirect(request.getContextPath() + "/");
